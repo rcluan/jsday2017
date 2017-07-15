@@ -24,9 +24,37 @@ https://docs.nativescript.org/ui/components.
     core theme, such as p-20, btn, h2, and text-center. You can view a full list of the
     class names available for styling your app at https://docs.nativescript.org/ui/theme.
     -->
-    <StackLayout class="p-20">
-        <Label text="Tap the button" class="h1 text-center"/>
-        <Button text="TAP" tap="{{ onTap }}" class="btn btn-primary btn-active"/>
-        <Label text="{{ message }}" class="h2 text-center" textWrap="true"/>
-    </StackLayout>
+    <TabView selectedIndex="0">
+       <TabView.items>
+         <TabViewItem title="Home">
+           <TabViewItem.view>
+             <StackLayout>
+                 <Label text="NativeScript" class="m-15 h2 text-left" color="blue"></Label>
+                 <ListView class="list-group" items="{{myItems}}">
+                  <ListView.itemTemplate>
+                    <GridLayout class="list-group-item" rows="*" columns="auto, *">
+                      <Image row="0" col="0" src="https://t1.ea.ltmcdn.com/pt/images/3/6/1/img_socializar_um_filhote_de_cachorro_corretamente_20163_600.jpg" width="64" height="64" class="thumb"></Image>
+                      <Label row="0" col="1" text="Your text"></Label>
+                    </GridLayout>
+                  </ListView.itemTemplate>
+                </ListView>
+             </StackLayout>
+           </TabViewItem.view>
+         </TabViewItem>
+         <TabViewItem title="Camera">
+           <TabViewItem.view>
+             <StackLayout>
+                 <Label text="NativeScript" textWrap="true" class="h2 m-x-auto" color="blue"></Label>
+             </StackLayout>
+           </TabViewItem.view>
+         </TabViewItem>
+         <TabViewItem title="Perfil">
+           <TabViewItem.view>
+             <StackLayout>
+                 <Label text="NativeScript" textWrap="true" class="h2 m-x-auto" color="blue"></Label>
+             </StackLayout>
+           </TabViewItem.view>
+         </TabViewItem>
+       </TabView.items>
+    </TabView>
 </Page>

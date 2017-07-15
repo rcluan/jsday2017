@@ -5,6 +5,10 @@ export class HelloWorldModel extends Observable {
     private _counter: number;
     private _message: string;
 
+    myItems = [{
+      text: 'test'
+    }];
+
     constructor() {
         super();
 
@@ -16,7 +20,7 @@ export class HelloWorldModel extends Observable {
     get message(): string {
         return this._message;
     }
-    
+
     set message(value: string) {
         if (this._message !== value) {
             this._message = value;
